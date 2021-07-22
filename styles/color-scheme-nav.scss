@@ -1,0 +1,57 @@
+.color-scheme-nav {
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 0.25rem;
+  background-color: #E3F3FE;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 1.5rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    outline: none !important;
+    
+    &--selected {
+      background-color: white;
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    stroke: $lightblack;
+    &--small {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+    &--selected {
+      stroke: #292830;
+    }
+  }
+}
+
+body.dark-theme {
+  & .color-scheme-nav  {
+    background-color: #363540;
+
+    &__button {
+      &--selected {
+        background-color: #505461;
+      }
+    }
+
+    &__icon {
+      stroke: #8E8EA0;
+      &--selected {
+        stroke: #fff;
+      }
+    }
+  }
+}
