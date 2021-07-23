@@ -1,20 +1,21 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { signinInputEnum, signinInputType } from "./signin-types";
 import HideIcon from "../icons/hide-icon";
 import MessageIcon from "../icons/message-icon";
 import PasswordIcon from "../icons/password-icon";
 
 export default function SigninInput(props: {type: signinInputType, onChange: any, value?: string}) {
+  // const inputRef = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [value, setValue] = useState(props.value ? props.value : "");
-
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
   }
 
   const changeValue = (event: any) => {
     setValue(event.target.value);
-    props.onChange(value)
+    props.onChange(value);
+    // props.onChange(inputRef?.current?.value)
   }
 
   return(
@@ -28,6 +29,7 @@ export default function SigninInput(props: {type: signinInputType, onChange: any
           placeholder={props.type}
           value={value}
           onChange={changeValue}
+        // ref={inputRef}
       />
 
       <div className="signin-form-input__button">

@@ -1,44 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DarkIcon from "./icons/dark-icon";
 import LightIcon from "./icons/light-icon";
 import { colorSchemeEnum } from "../interfaces/shared";
+import { useDispatch, useSelector } from "react-redux";
+import { stateInterface } from "../store";
 
 export default function ColorSchemeNav() {
-  const [colorScheme, setColorScheme] = useState(colorSchemeEnum.light);
+  const dispatch = useDispatch();
 
-  if (process.browser) {
-    // if (window.matchMedia && window.matchMedia(`(prefers-color-scheme: ${colorSchemeEnum.dark})`).matches) {
-    //   colorScheme === colorSchemeEnum.light && setColorScheme(colorSchemeEnum.dark)
-    // }
-    if (process.browser) {
-      if(colorScheme === colorSchemeEnum.dark) {
-        document.body.style.backgroundColor = "#292830";
-        document.body.classList.add("dark-theme");
-      } else if(colorScheme === colorSchemeEnum.light) {
-        document.body.classList.remove("dark-theme");
-        document.body.style.backgroundColor = "white";   
-      }
+  const [colorScheme, setColorScheme] = useState(colorSchemeEnum.light);
+  const colorSchemeState = useSelector((state: stateInterface) => state.colorScheme);
+  // init
+  useEffect(() => {
+  }, []);
+  
+  // onstatechange
+  useEffect(() => {
+    setColorScheme(colorSchemeState);
+  }, [colorSchemeState]);
+
+  // destroy
+  useEffect(() => {
+    return () => {
     }
-  }
+  }, []);
 
   const setDark = () => {
-    setColorScheme(colorSchemeEnum.dark)
+    dispatch({type: 'color-scheme', text: colorSchemeEnum.dark});
+    setColorScheme(colorSchemeEnum.dark);
   }
+
   const setLight = () => {
-    setColorScheme(colorSchemeEnum.light)
+    dispatch({type: 'color-scheme', text: colorSchemeEnum.light});
+    setColorScheme(colorSchemeEnum.light);
   }
 
   return(
     <div className="color-scheme-nav">
       {/* light button */}
-      <button className={`color-scheme-nav__button ${colorScheme === colorSchemeEnum.light ? "color-scheme-nav__button--selected" : null}`} onClick={setLight}>
-        <LightIcon className={`color-scheme-nav__icon ${colorScheme === colorSchemeEnum.light ? "color-scheme-nav__icon--selected" : null}`}/>
+      <button className={`color-scheme-nav__button ${colorScheme === colorSchemeEnum.light ? "color-scheme-nav__button--selected" : ""}`} onClick={setLight}>
+        <LightIcon className={`color-scheme-nav__icon ${colorScheme === colorSchemeEnum.light ? "color-scheme-nav__icon--selected" : ""}`}/>
       </button>
 
       {/* dark button */}
-      <button className={`color-scheme-nav__button ${colorScheme === colorSchemeEnum.dark ? "color-scheme-nav__button--selected" : null}`} onClick={setDark}>
-        <DarkIcon className={`color-scheme-nav__icon color-scheme-nav__icon--small ${colorScheme === colorSchemeEnum.dark ? "color-scheme-nav__icon--selected" : null}`}/>
+      <button className={`color-scheme-nav__button ${colorScheme === colorSchemeEnum.dark ? "color-scheme-nav__button--selected" : ""}`} onClick={setDark}>
+        <DarkIcon className={`color-scheme-nav__icon color-scheme-nav__icon--small ${colorScheme === colorSchemeEnum.dark ? "color-scheme-nav__icon--selected" : ""}`}/>
       </button>
     </div>
-  )
+  );
 }
