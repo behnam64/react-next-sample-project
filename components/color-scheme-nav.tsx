@@ -35,7 +35,7 @@ export default function ColorSchemeNav() {
     setColorScheme(colorSchemeEnum.light);
   }
 
-  return(
+  return (
     <div className="color-scheme-nav">
       {/* light button */}
       <button className={`color-scheme-nav__button ${colorScheme === colorSchemeEnum.light ? "color-scheme-nav__button--selected" : ""}`} onClick={setLight}>

@@ -2,12 +2,12 @@ import React from "react";
 import MainNav from "../components/navigation/main-nav";
 import SideNav from "../components/side-nav";
 
-export default function Home() {
+export default function Setttings() {
   return (
     <React.Fragment>
-      <MainNav title="Dashboard"/>
-      <div className="home"></div>
-    </React.Fragment>
+    <MainNav title="Dashboard"/>
+    <div className="home"></div>
+  </React.Fragment>
   )
 }
 

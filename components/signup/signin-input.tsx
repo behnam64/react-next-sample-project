@@ -18,7 +18,7 @@ export default function SigninInput(props: {type: signinInputType, onChange: any
     // props.onChange(inputRef?.current?.value)
   }
 
-  return(
+  return (
     <div className="signin-form-input">
       <input className="signin-form-input__input"
         style={{paddingRight: props.type === signinInputEnum.password ? "3.5rem" : undefined}}

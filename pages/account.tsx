@@ -2,7 +2,7 @@ import React from "react";
 import MainNav from "../components/navigation/main-nav";
 import SideNav from "../components/side-nav";
 
-export default function Home() {
+export default function Account() {
   return (
     <React.Fragment>
       <MainNav title="Dashboard"/>

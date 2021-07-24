@@ -35,7 +35,7 @@
       background-color: transparent;
       padding: 0.5rem;
       outline: none !important;
-      color: #41B0F6;
+      color: $blue;
       margin-bottom: 2.5rem;
     }
   }
@@ -47,8 +47,8 @@
     width: 16rem;
     height: 3.5rem;
     border-radius: 0.6rem;
-    background-color: #41B0F6;
-    background: linear-gradient(96.74deg, #41B0F6 0%, #8AD2FF 94.85%);
+    background-color: $blue;
+    background: linear-gradient(96.74deg, $blue 0%, #8AD2FF 94.85%);
     border: none;
     outline: none !important;
     &--text {
@@ -76,7 +76,7 @@
       outline: none !important;
       font-size: 0.9rem;
       font-weight: bold;
-      color: #41B0F6;
+      color: $blue;
       &::after {
         content: "";
         position: absolute;
@@ -84,7 +84,7 @@
         left: 0.5rem;
         height: 2px;
         width: calc(100% - 1rem);
-        background-color: #41B0F6;
+        background-color: $blue;
       }
     }
   }
