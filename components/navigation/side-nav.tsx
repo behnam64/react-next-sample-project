@@ -7,6 +7,8 @@ import Link from 'next/link'
 import SettingIcon from "../icons/setting-icon";
 import LogoutIcon from "../icons/logout-icon";
 import React from "react";
+import CrossIcon from "../icons/cross-icon";
+import ColorSchemeNav from "../color-scheme-nav";
 
 export default function SideNav(props: {open: boolean, close: any}) {
   const router = useRouter();
@@ -15,9 +17,15 @@ export default function SideNav(props: {open: boolean, close: any}) {
   return (
     <React.Fragment>
       {props.open && <div className="side-nav__overlay" onClick={props.close}></div>}
-      <div className={`side-nav ${props.open ? "side-nav--open" : ""}`} onClick={props.close}>
+      <div className={`side-nav ${props.open ? "side-nav--open" : ""}`}>
         <div className="side-nav__section">
-          <img className="side-nav__logo" src="/images/elevate.png" alt="elevate"/>
+          <img className="side-nav__logo side-nav__logo--light" src="/images/elevate.png" alt="elevate"/>
+          <img className="side-nav__logo side-nav__logo--dark" src="/images/elevate-dark.png" alt="elevate"/>
+
+          <div className="side-nav__top">
+            <span className="side-nav__top--text">Menu</span>
+            <button className="side-nav__top--close" onClick={props.close}><CrossIcon className="side-nav__top--close--icon"/></button>
+          </div>
 
           <ul className="side-nav__list side-nav__list--1">
             <li className="side-nav__item">
@@ -60,7 +68,7 @@ export default function SideNav(props: {open: boolean, close: any}) {
         </div>
         {route === "settings" ? "dkljgfkgj" : ""}
         <div className="side-nav__section">
-          <ul className="side-nav__list">
+          <ul className="side-nav__list side-nav__list--2">
             <li className="side-nav__item">
               <Link href="/settings">
                 <a className="side-nav__item--link">
@@ -80,6 +88,7 @@ export default function SideNav(props: {open: boolean, close: any}) {
             </li>
           </ul>
         </div>
+        <div className="side-nav__color-scheme"><ColorSchemeNav/></div>
       </div>
     </React.Fragment>
   )

@@ -36,7 +36,8 @@ export default function TopNav(props: {title: string, openSideNav: any}) {
           </div>
 
           <div className="top-nav__section top-nav__section--tablet">
-            <img className="top-nav__logo" src="/images/elevate.png" alt="elevate"/>
+            <img className="top-nav__logo top-nav__logo--light" src="/images/elevate.png" alt="elevate"/>
+            <img className="top-nav__logo top-nav__logo--dark" src="/images/elevate-dark.png" alt="elevate"/>
           </div>
         </div>
 

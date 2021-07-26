@@ -1,0 +1,3 @@
+export default function InfoIcon(props: {className: string}) {
+  return <svg className={props.className}  width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.9919 10.8726V7.5285" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7.99203 5.1274H7.99959" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path fillRule="evenodd" clipRule="evenodd" d="M11.2798 1H4.71946C2.4333 1 1 2.6187 1 4.90941V11.0906C1 13.3813 2.42649 15 4.71946 15H11.279C13.5728 15 15 13.3813 15 11.0906V4.90941C15 2.6187 13.5728 1 11.2798 1Z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+}

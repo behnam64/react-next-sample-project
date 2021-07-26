@@ -5,6 +5,7 @@ import store from '../store'
 import React, { useEffect } from 'react';
 import ColorScheme from '../services/color-scheme';
 import Router from 'next/router'
+import HeadShared from '../components/head-shared';
 
 
 function Init() {
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
       <Provider store={store}>
+        <HeadShared/>
         <Init/>
         <Component {...pageProps} />
       </Provider>

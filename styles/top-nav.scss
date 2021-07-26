@@ -3,7 +3,7 @@
   width: calc(100% - 16rem);
   margin-left: 16rem;
   background-color: #F6FBFF;
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 1110px) {
     width: 100%;
     margin: 0;
   }
@@ -17,16 +17,16 @@
     padding: 2rem;
     padding-top: 2.6rem;
     &--desktop {
-      @media only screen and (max-width: 890px) {
+      @media only screen and (max-width: 1110px) {
         width: 100%;
         margin: 0;
-        background-color: white;
+        background-color: $white;
         padding: 1rem;
       }
     }
     &--tablet {
       display: none;
-      @media only screen and (max-width: 890px) {
+      @media only screen and (max-width: 1110px) {
         display: flex;
         flex-direction: row;
         padding: 1rem;
@@ -40,13 +40,13 @@
     justify-content: space-between;
     flex-direction: row-reverse;
     &--desktop {
-      @media only screen and (max-width: 890px) {
+      @media only screen and (max-width: 1110px) {
         display: none;
       }
     }
     &--tablet {
       display: none;
-      @media only screen and (max-width: 890px) {
+      @media only screen and (max-width: 1110px) {
         display: flex;
       }
     }
@@ -99,7 +99,7 @@
       align-items: center;
       justify-content: center;
       background-color: $blue;
-      color: white;
+      color: $white;
       font-size: 0.8rem;
       width: 1.1rem;
       height: 1.1rem;
@@ -131,6 +131,12 @@
 
   &__logo {
     width: 8rem;
+    &--light {
+      display: inline-block;
+    }
+    &--dark {
+      display: none;
+    }
   }
 
   &__title {
@@ -138,5 +144,54 @@
     font-weight: bold;
     color: $black;
     margin: 0;
+  }
+}
+
+body.dark-theme {
+  & .top-nav  {
+    background-color: $darkblack;
+
+    &__container {
+      &--desktop {
+        @media only screen and (max-width: 1110px) {
+          background-color: $black;
+        }
+      }
+    }
+
+    &__menu {
+      &--icon {
+        fill: $lightgray2;
+      }
+    }
+
+    &__notification {
+      &--icon {
+        stroke: $lightgray2;
+      }
+    }
+
+    &__latest {
+      background-color: $lightblack;
+      &--text {
+        color: $lightgray2;
+      }
+      &--icon {
+        stroke: $lightgray2;
+      }
+    }
+
+    &__title {
+      color: $white;
+    }
+
+    &__logo {
+      &--light {
+        display: none;
+      }
+      &--dark {
+        display: inline-block;
+      }
+    }
   }
 }

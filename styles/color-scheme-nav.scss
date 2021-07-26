@@ -19,14 +19,14 @@
     outline: none !important;
     
     &--selected {
-      background-color: white;
+      background-color: $white;
     }
   }
 
   &__icon {
     width: 1rem;
     height: 1rem;
-    stroke: $lightblack;
+    stroke: $lightgray1;
     &--small {
       width: 0.8rem;
       height: 0.8rem;
@@ -39,7 +39,7 @@
 
 body.dark-theme {
   & .color-scheme-nav  {
-    background-color: #363540;
+    background-color: $lightblack;
 
     &__button {
       &--selected {
@@ -48,7 +48,7 @@ body.dark-theme {
     }
 
     &__icon {
-      stroke: #8E8EA0;
+      stroke: $lightgray2;
       &--selected {
         stroke: #fff;
       }

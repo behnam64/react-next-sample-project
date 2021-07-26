@@ -13,3 +13,79 @@ html {
 body {
   min-height: 100vh;
 }
+
+.scroll-bar body {
+  scrollbar-width: auto;
+  scrollbar-color: #999 transparent;
+}
+.scroll-bar body::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.scroll-bar body::-webkit-scrollbar-track {
+  background: #eee;
+}
+.scroll-bar body::-webkit-scrollbar-thumb {
+  background: #999;
+}
+.scroll-bar body::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+.scroll-bar body * {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+.scroll-bar body * ::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.scroll-bar body * ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-bar body * ::-webkit-scrollbar-thumb {
+  background: #999;
+}
+.scroll-bar body * ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+.scroll-bar body.dark-theme {
+  scrollbar-width: auto;
+  scrollbar-color: #666 transparent;
+}
+.scroll-bar body.dark-theme::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.scroll-bar body.dark-theme::-webkit-scrollbar-track {
+  background: #202020;
+}
+.scroll-bar body.dark-theme::-webkit-scrollbar-thumb {
+  background: #454545;
+}
+.scroll-bar body.dark-theme::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+.scroll-bar body.dark-theme * {
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+.scroll-bar body.dark-theme * ::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+.scroll-bar body.dark-theme * ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-bar body.dark-theme * ::-webkit-scrollbar-thumb {
+  background: #454545;
+}
+.scroll-bar body.dark-theme * ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
